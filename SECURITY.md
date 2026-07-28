@@ -21,7 +21,7 @@ Instead, report it privately.
 
 Email:
 
-security@devshield.site
+devshieldhelpdesk@gmail.com
 
 or
 
