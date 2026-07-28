@@ -72,7 +72,7 @@ If you experience or witness unacceptable behavior, please report it privately.
 
 Email:
 
-**security@devshield.site**
+devshieldhepdesk@gmail.com
 
 All reports will be reviewed promptly and handled confidentially whenever possible.
 
