@@ -1,0 +1,23 @@
+{
+  "name": "devshield",
+  "version": "1.0.0",
+  "description": "DevShield — Autonomous AI Bug Hunter",
+  "main": "sdk/agent.js",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bin": {
+    "devshield": "./devshield/bin/devshield.js"
+  },
+  "scripts": {
+    "devshield": "node devshield/bin/devshield.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "adm-zip": "^0.6.0",
+    "nodemailer": "^6.9.14",
+    "resend": "^4.0.0",
+    "stripe": "^14.0.0"
+  }
+}

@@ -1,0 +1,32 @@
+name: "DevShield Bug Hunter"
+description: "Scans a repo for structural issues, secret leaks, syntax errors, and risky patterns before every commit."
+author: "DevShield"
+
+branding:
+  icon: "shield"
+  color: "purple"
+
+inputs:
+  required-paths:
+    description: "Comma-separated list of paths that must exist in the repo"
+    required: false
+    default: "package.json"
+  node-version:
+    description: "Node.js version to run DevShield with"
+    required: false
+    default: "20"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Run DevShield Pipeline
+      shell: bash
+      working-directory: ${{ github.workspace }}
+      env:
+        DEVSHIELD_REQUIRED_PATHS: ${{ inputs.required-paths }}
+      run: node "${{ github.action_path }}/devshield/pipeline.js"
