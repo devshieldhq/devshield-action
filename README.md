@@ -1,371 +1,920 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devshieldhq/Devshield/main/logo-navbar.png.png" width="160" alt="DevShield Logo">
+</p>
 
-<div align="center">
+<h1 align="center">🛡️ DevShield</h1>
 
-# 🛡️ DevShield AI
+<p align="center">
+Developer-first Application Security Platform that detects vulnerabilities before deployment.
+</p>
 
-### Autonomous Software Reliability Platform
+<p align="center">
 
-**Detect • Diagnose • Repair • Learn**
-
-> DevShield turns software monitoring into autonomous software engineering — a runtime SDK and a static analysis engine, both backed by AI agents that don't just flag problems, they investigate and fix them.
-
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![Stack](https://img.shields.io/badge/stack-Node.js%20%7C%20Supabase%20%7C%20Vercel-informational)
+![Node.js](https://img.shields.io/badge/Node.js-20+-green)
 ![License](https://img.shields.io/badge/license-Proprietary-lightgrey)
-![Status](https://img.shields.io/badge/status-active--development-yellow)
+![GitHub Stars](https://img.shields.io/github/stars/devshieldhq/Devshield)
+![Issues](https://img.shields.io/github/issues/devshieldhq/Devshield)
+![Security](https://img.shields.io/badge/security-DevSecOps-red)
+![Build](https://img.shields.io/github/actions/workflow/status/devshieldhq/Devshield/devshield.yml)
 
-</div>
-
----
-
-## 📑 Table of Contents
-
-- [What is DevShield?](#-what-is-devshield)
-- [Why DevShield Exists](#-why-devshield-exists)
-- [The Problem](#-the-problem)
-- [The Solution](#-the-solution)
-- [Architecture](#-architecture)
-- [AI Pipeline](#-ai-pipeline)
-- [Core AI Agents](#-core-ai-agents)
-- [Features](#-features)
-- [Dashboard](#-dashboard)
-- [CLI](#-cli)
-- [Runtime SDK](#-runtime-sdk)
-- [Installation](#-installation)
-- [Quick Start](#-quick-start)
-- [Screenshots](#-screenshots)
-- [Demo](#-demo)
-- [Project Structure](#-project-structure)
-- [Technical Stack](#-technical-stack)
-- [Built With AI Assistance](#-built-with-ai-assistance)
-- [Challenges](#-challenges)
-- [Performance](#-performance)
-- [Roadmap](#-roadmap)
-- [Comparison](#-comparison)
-- [Security](#-security)
-- [Enterprise Vision](#-enterprise-vision)
-- [Contributing](#-contributing)
-- [License](#-license)
+</p>
 
 ---
 
-## 🧩 What is DevShield?
+# 🛡️ What is DevShield?
 
-DevShield is two things bolted onto one AI pipeline: a **runtime SDK** (`agent.js`) that customers embed on their site to catch JS errors, unhandled rejections, and network failures live, and a **standalone static analysis CLI** (`devshield/`) that scans any codebase — 21 languages, 32 rule categories — for bugs, secrets, and security issues before they ship. Both feed the same AI layer: Guardian catches or detects the issue, Inspector gathers context, Diagnose explains root cause, and AutoFix executes a safe, whitelisted repair where one exists. Everything surfaces in a developer dashboard with per-project health, live incident feeds, and billing.
+DevShield is a developer-first application security platform built to help developers discover, understand, prioritize, and remediate security vulnerabilities before software reaches production.
 
----
+Unlike traditional scanners that simply dump vulnerabilities into a report, DevShield provides actionable findings with file locations, affected code snippets, severity analysis, deployment protection, and an interactive dashboard designed for modern development teams.
 
-## 🎯 Why DevShield Exists
+DevShield combines:
 
-Traditional monitoring tools tell you *something failed*. DevShield tries to tell you:
+- CLI security scanning
+- Repository security analysis
+- Deployment protection
+- GitHub integration
+- Interactive security dashboard
+- CI/CD security automation
 
-- **why** it failed (root cause, not just a stack trace)
-- **where** it's coming from (which file, which dependency, which request)
-- **what the blast radius is** (impact/severity)
-- **how to fix it** (a concrete repair plan, auto-applied when it's safe to)
-
----
-
-## ❗ The Problem
-
-- Developers spend hours searching logs and reproducing bugs that only show up in production
-- Existing monitoring tools surface noise, not root cause
-- Logs are voluminous and rarely point directly at the fix
-- Repairs are manual, repetitive, and rarely documented for next time
-- Institutional knowledge about "how we fixed this last time" disappears between incidents
-
-## ✅ The Solution
-
-DevShield replaces the standard `monitor → alert → human digs in` loop with:
-
-Monitoring → AI Reasoning → Repair
-
-A chain of purpose-built AI agents (Guardian → Inspector → Diagnose → AutoFix) handles detection, context-gathering, diagnosis, and — for a defined class of safe repairs — the fix itself, before a human has to open a terminal.
+into a single developer-focused platform.
 
 ---
 
-## 🏗️ Architecture
+## Why DevShield?
 
-        Browser
-           │
-     Runtime SDK (agent.js)
-           │
-      Guardian AI  ──────► detects & fingerprints incidents
-           │
-     Inspector AI  ──────► gathers stack trace, browser state, timeline
-           │
-      Diagnose AI  ──────► root cause + confidence + severity
-           │
-       AutoFix AI  ──────► executes whitelisted repair (if safe)
-           │
-        Dashboard  ──────► developer sees the whole incident story
-           │
-            CLI    ──────► same AI layer, run against a codebase pre-commit/CI
-           │
-        Developer
+Modern developers shouldn't have to choose between:
 
-The runtime path (SDK → Guardian → Inspector → Diagnose → AutoFix → Dashboard) runs against a *live* deployed app. The CLI (`devshield/`) runs the equivalent detection + AI diagnosis layer statically, against source code, independent of the deployed app — useful pre-commit or as a GitHub Action.
+❌ Shipping fast
 
----
+or
 
-## 🔄 AI Pipeline
+❌ Shipping securely
 
-Guardian → Inspector → Diagnose → AutoFix → Learning
+DevShield helps teams:
 
-1. **Guardian** — watches for incidents, deduplicates by fingerprint, assigns a risk score
-2. **Inspector** — pulls context: stack trace, browser/runtime state, dependency versions, event timeline
-3. **Diagnose** — proposes root cause with a confidence score and severity rating
-4. **AutoFix** — for whitelisted, safe repair types, executes automatically (retry failed requests, reload missing resources, clear stale state); everything else is surfaced with a suggested fix for a human to approve
-5. **Learning** — incident outcomes and repair success/failure feed back into future ranking of repair strategies (`agent/guardian.js` learning history, `devshield/ai/LearningEngine.js`)
+- Shift security left
+- Catch vulnerabilities early
+- Block insecure deployments
+- Reduce remediation time
+- Improve developer productivity
+- Secure software without slowing development
+
+ # Key Features
+
+## 🔍 CLI Security Scanner
+
+- Scan local projects in seconds
+- Recursive file analysis
+- Language-aware detection engine
+- Existing vulnerability tracking
+- Security baseline support
+- Deployment protection
+- Exit codes for CI/CD
+- Rich console reporting
 
 ---
 
-## 🤖 Core AI Agents
+## 🌐 Interactive Security Dashboard
 
-### Guardian (`agent/guardian.js`)
-- Monitors runtime, detects incidents
-- Fingerprints and deduplicates repeat errors
-- Assigns a risk score
-- Maintains learning history across incidents
+Monitor every project from a centralized web dashboard.
 
-### Inspector (`agent/inspector.js`, `devshield/pipeline-inspector.js`)
-- Collects surrounding context: browser state, stack trace, dependency and timeline data (runtime path), or project structure/config (static-analysis path)
+Features include:
 
-### Diagnose (`agent/diagnose.js`, `devshield/ai/DiagnosisEngine.js`)
-- Determines likely root cause
-- Attaches an AI confidence score and severity
-- Produces human-readable recommendations (`devshield/ai/ExplanationEngine.js`)
-
-### AutoFix (`agent/autofix_v2.js`, `agent/repairEngine.js`, `devshield/ai/FixEngine.js`)
-- Builds a repair plan
-- Only executes pre-approved, whitelisted, safe automations
-- Designed for rollback/approval rather than blind auto-apply on anything high-risk
+- Project management
+- Repository scanning
+- Scan history
+- Severity analytics
+- Vulnerability explorer
+- Code snippets
+- File & line navigation
+- Deployment status
+- Security metrics
 
 ---
 
-## ✨ Features
+## 🔗 GitHub Integration
 
-| Feature | Status |
-|---|---|
-| Runtime Monitoring | ✅ |
-| AI Diagnosis | ✅ |
-| Root Cause Analysis | ✅ |
-| Risk Scoring | ✅ |
-| AI Repair Plan | ✅ |
-| Incident Timeline | ✅ |
-| Developer Dashboard | ✅ |
-| Admin Dashboard | ✅ |
-| Static Analysis CLI (21 languages, 32 rule categories) | ✅ |
-| GitHub Action | ✅ |
-| Billing (Paystack) | ✅ |
-| Auth (Supabase — email/password + Google/GitHub OAuth) | ✅ |
-| Self-Learning repair ranking | ✅ (guardian + LearningEngine) |
-| Predictive AI (pre-empting incidents before they occur) | 🚧 |
-| CLI subcommands (`scan`/`diagnose`/`fix`/`monitor` as distinct verbs) | 🚧 (currently single-mode scan; see [CLI](#-cli)) |
+DevShield integrates directly with GitHub repositories.
+
+Capabilities include:
+
+- Repository validation
+- Automatic repository download
+- ZIP extraction
+- Repository cleanup
+- GitHub Actions integration
+- SARIF report generation
+- CI/CD deployment protection
 
 ---
 
-## 📊 Dashboard
+## 🛑 Deployment Protection
 
-- **AI Health** — overall agent status across projects
-- **Incident Feed** — live bug/error stream as it's classified
-- **Performance** — performance metric ingestion and trends
-- **Guardian panel** — active incident detection status
-- **Diagnose panel** — root cause explanations per incident
-- **AutoFix panel** — repair actions taken, pending, or requiring approval
-- **Admin view** — platform-wide analytics, user management, billing overview (admin-gated)
+DevShield prevents insecure code from reaching production.
 
----
+Pipeline Guardian can:
 
-## ⌨️ CLI
+- Block deployments
+- Fail CI pipelines
+- Enforce security thresholds
+- Detect critical vulnerabilities
+- Exit with proper status codes
 
-DevShield ships two CLI entry points — worth knowing which is which:
-
-**Current / recommended** (`devshield/bin/devshield.js`, the npm `bin`):
-
-devshield .                 # scan the current directory
-devshield . --json          # JSON output
-devshield . --html          # HTML report
-devshield . --sarif         # SARIF (for GitHub code scanning)
-
-This is a single-mode scanner — point it at a path, it detects languages, runs the matching rule sets, and reports findings by severity.
-
-**Legacy pipeline** (`devshield/devshield-cli.js`):
-
-node devshield/devshield-cli.js scan     # runs the full legacy check pipeline (default if no command given)
-node devshield/devshield-cli.js login    # save a DevShield API key locally
-node devshield/devshield-cli.js version  # print CLI version
-node devshield/devshield-cli.js help     # list commands
-
-Note: in the legacy CLI, any command other than `login`/`version`/`help` (including `scan`, `doctor`) currently runs the same full pipeline — there's no per-command branching for `diagnose`/`fix`/`monitor` yet. Distinct subcommands for those are a roadmap item, not current behavior.
+Perfect for GitHub Actions and automated deployments.
 
 ---
 
-## 📡 Runtime SDK
+## 📊 Multiple Report Formats
 
-Guardian → Transport → Incident → Diagnosis → Repair
+Generate reports for every workflow.
 
-Drop one `<script>` tag (pointing at `agent.js`) into any site. The SDK captures JS errors, unhandled promise rejections, console errors, and network failures, tags them with your project's API key, and ships them to `/api/analyze` for classification and AI diagnosis.
+Supported formats:
+
+- Console
+- JSON
+- HTML
+- SARIF
+
+These reports can be consumed by developers, CI/CD systems, or external security platforms.
 
 ---
 
-## 🚀 Installation
+## 🧠 Developer-Focused Experience
 
-git clone <your-repo-url>
-cd Devshield-main
+DevShield was built for developers—not security analysts.
+
+Every finding includes:
+
+- Severity
+- Rule name
+- File path
+- Line number
+- Code snippet
+- Explanation
+- Recommended remediation
+
+Making vulnerabilities easy to understand and fix.
+# 🏗️ Architecture Overview
+
+DevShield is designed as a modular security platform where every component has a single responsibility. This makes it easy to extend, maintain, and integrate into existing developer workflows.
+
+```text
+                    ┌──────────────────────────┐
+                    │        Developer         │
+                    └────────────┬─────────────┘
+                                 │
+                                 │
+                      CLI / Dashboard / API
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │     DevShield Engine     │
+                    └────────────┬─────────────┘
+                                 │
+         ┌───────────────────────┼────────────────────────┐
+         │                       │                        │
+         ▼                       ▼                        ▼
+ ┌────────────────┐     ┌────────────────┐      ┌────────────────┐
+ │ Rule Engine    │     │ GitHub Module  │      │ Pipeline Guard │
+ └────────────────┘     └────────────────┘      └────────────────┘
+         │                       │                        │
+         ▼                       ▼                        ▼
+ ┌────────────────┐     ┌────────────────┐      ┌────────────────┐
+ │ File Scanner   │     │ Repo Scanner   │      │ Deploy Check   │
+ └────────────────┘     └────────────────┘      └────────────────┘
+         │
+         ▼
+ ┌─────────────────────────────────────────────────────────────┐
+ │                     Reporting Engine                        │
+ ├─────────────────────────────────────────────────────────────┤
+ │ Console │ JSON │ HTML │ SARIF │ Dashboard │ API Responses   │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Core Components
+
+### 🔍 Scanner Engine
+
+The Scanner Engine is responsible for recursively analyzing source code, identifying vulnerabilities, collecting metadata, and generating structured findings.
+
+Responsibilities:
+
+- Project traversal
+- File discovery
+- Language detection
+- Rule execution
+- Finding aggregation
+
+---
+
+### 🧠 Rule Engine
+
+The Rule Engine contains DevShield's security detection logic.
+
+It evaluates every supported file against hundreds of security rules covering:
+
+- Injection attacks
+- Secrets exposure
+- Authentication issues
+- Cryptography misuse
+- Dangerous APIs
+- Configuration weaknesses
+- Deployment risks
+
+The modular design allows new security rules to be added without modifying the scanner itself.
+
+---
+
+### 🔗 GitHub Integration
+
+The GitHub module enables DevShield to scan remote repositories directly.
+
+Capabilities include:
+
+- Repository validation
+- Secure repository download
+- ZIP extraction
+- Temporary workspace management
+- Cleanup
+- GitHub Actions compatibility
+
+---
+
+### 🛑 Pipeline Guardian
+
+Pipeline Guardian evaluates scan results before deployment.
+
+It determines whether a build should:
+
+- Pass
+- Warn
+- Fail
+
+based on configurable security thresholds.
+
+This allows DevShield to stop insecure code before it reaches production.
+
+---
+
+### 📊 Reporting Engine
+
+Every scan can generate multiple report formats simultaneously.
+
+Supported outputs:
+
+- Terminal console
+- JSON
+- HTML
+- SARIF
+- Dashboard API responses
+
+This allows DevShield to integrate seamlessly into developer workflows, CI/CD pipelines, and external security platforms.
+
+# 📦 Installation
+
+## Requirements
+
+Before installing DevShield, ensure your environment meets the following requirements:
+
+- Node.js 20+
+- npm 10+
+- Git (optional, for repository features)
+
+Verify your installation:
+
+```bash
+node -v
+npm -v
+```
+
+---
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/devshieldhq/Devshield.git
+```
+
+```bash
+cd Devshield
+```
+
+---
+
+## Install Dependencies
+
+```bash
 npm install
-
-### Environment Variables
-
-| Variable | Required | Used for |
-|---|---|---|
-| `SUPABASE_URL` | ✅ | Supabase project URL |
-| `SUPABASE_SERVICE_ROLE_KEY` | ✅ | Server-side Supabase access |
-| `SUPABASE_ANON_KEY` | ✅ | Public Supabase key, exposed via `/api/config` |
-| `PAYSTACK_SECRET_KEY` | ✅ | Checkout, payment verification, webhook validation |
-| `GMAIL_USER` / `GMAIL_APP_PASSWORD` | ✅ | Transactional email (Gmail SMTP via Nodemailer) |
-| `APP_URL` | Optional | Base URL for email links |
-| `VERCEL_URL` | Auto-set by Vercel | Password-reset redirect URLs |
+```
 
 ---
 
-## ⚡ Quick Start
+## Verify Installation
 
-Open dashboard → Generate an error → Guardian captures it → Diagnose explains it → AutoFix repairs it (if safe)
+Run a scan against the current project.
 
-vercel dev        # serves index.html + /api/* together, matching prod routing
+```bash
+node devshield/bin/devshield.js scan .
+```
+
+Expected output:
+
+```text
+✔ Files Scanned: 125
+
+✔ Critical : 0
+✔ High     : 1
+✔ Medium   : 4
+✔ Low      : 7
+
+Deployment Status:
+PASSED
+```
 
 ---
 
-## 🖼️ Screenshots
+# 🚀 CLI Usage
 
-_Add screenshots of the dashboard, Guardian incident feed, and Diagnose/AutoFix panels here before publishing — none are currently checked into the repo besides `logo-navbar.png` and `og-image.png`._
+## Scan a Project
 
-## 🎬 Demo
-
-- **Live:** devshield1.vercel.app
-- **GitHub:** _add repo URL_
-- **Video walkthrough:** _add link once recorded_
+```bash
+node devshield/bin/devshield.js scan .
+```
 
 ---
 
-## 📁 Project Structure
+## Scan Another Folder
 
-Devshield-main/
-├── index.html              # Entire frontend — landing, auth, dashboard, admin, legal (single-page app)
-├── agent.js                 # Runtime SDK — the script customers embed on their site
-├── agent/
-│   ├── guardian.js            # Incident detection, fingerprinting, risk scoring, learning history
-│   ├── inspector.js            # Context collection
-│   ├── diagnose.js              # Client-side diagnosis helpers
-│   ├── repairEngine.js           # Executes whitelisted repair actions
-│   └── autofix_v2.js              # AutoFix engine (v2) — repair planning + self-learning memory
-├── security/                       # Client-side security modules loaded by index.html
-│   ├── apiKeys.js, rateLimit.js, sanitize.js, authSecurity.js, abuseDetection.js
-├── api/                              # Vercel serverless functions
-│   ├── auth.js, analyze.js, errors.js, dashboard.js, admin.js, projects.js,
-│   │   performance.js, account.js, config.js, checkout.js, verify-payment.js,
-│   │   paystack-webhook.js
-├── lib/                                # Shared backend utilities
-│   ├── supabase.js, security.js, email.js, notifications.js, billing.js, eventClassifier.js
-├── devshield/                            # Standalone multi-language static analysis CLI
-│   ├── bin/devshield.js                    # Current CLI entry point (npm `bin`)
-│   ├── devshield-cli.js                     # Legacy CLI entry (login/version/help/scan pipeline)
-│   ├── core/                                 # scan-engine, ParallelScanner, MetricsEngine, rule-loader
-│   ├── config/                                # default.js, loader.js
-│   ├── detectors/                              # Per-language project detection
-│   ├── languages/                               # 21 language scanners
-│   ├── rules/                                    # 32 rule categories
-│   ├── reporters/                                 # console, json, html, sarif
-│   ├── plugins/                                    # Third-party rule plugin support
-│   ├── ai/                                          # ConfidenceEngine, DiagnosisEngine, FixEngine,
-│   │                                                   ExplanationEngine, LearningEngine
-│   ├── security/                                     # devshield's own secret/key detectors
-│   └── pipeline-*.js                                  # Legacy pipeline orchestration modules
-├── manifest.json / sw.js / offline.html    # PWA support
+```bash
+node devshield/bin/devshield.js scan ./my-project
+```
+
+---
+
+## Generate JSON Report
+
+```bash
+node devshield/bin/devshield.js scan . --json
+```
+
+---
+
+## Generate HTML Report
+
+```bash
+node devshield/bin/devshield.js scan . --html
+```
+
+---
+
+## Generate SARIF Report
+
+```bash
+node devshield/bin/devshield.js scan . --sarif
+```
+
+---
+
+## Deployment Security Check
+
+```bash
+node devshield/bin/devshield.js deploy-check .
+```
+
+Pipeline Guardian automatically blocks deployment when configured security thresholds are exceeded.
+
+---
+
+## Create Security Baseline
+
+```bash
+node devshield/bin/devshield.js baseline .
+```
+
+Future scans compare findings against the saved baseline to distinguish existing issues from newly introduced vulnerabilities.
+
+---
+
+## Show Existing Vulnerabilities
+
+```bash
+node devshield/bin/devshield.js scan . --all
+```
+
+This displays both previously known findings and newly detected vulnerabilities.
+
+# 🌐 REST API
+
+DevShield provides a REST API for integrating repository scanning into dashboards, CI/CD pipelines, internal developer portals, and third-party applications.
+
+---
+
+## Base URL
+
+```text
+https://devshield.site/api
+```
+
+---
+
+# Authentication
+
+Every request requires your DevShield Project Key.
+
+Example header:
+
+```http
+Authorization: Bearer YOUR_PROJECT_KEY
+```
+
+---
+
+# Scan Repository
+
+Analyze a GitHub repository remotely.
+
+### Endpoint
+
+```http
+POST /api/analyze
+```
+
+---
+
+### Request
+
+```json
+{
+  "repository_url": "https://github.com/devshieldhq/Devshield"
+}
+```
+
+---
+
+### Example cURL
+
+```bash
+curl -X POST https://devshield.site/api/analyze \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer YOUR_PROJECT_KEY" \
+-d '{
+  "repository_url":"https://github.com/devshieldhq/Devshield"
+}'
+```
+
+---
+
+### Success Response
+
+```json
+{
+  "success": true,
+  "summary": {
+    "critical": 0,
+    "high": 2,
+    "medium": 5,
+    "low": 7
+  },
+  "findings": [
+    {
+      "severity": "HIGH",
+      "rule": "Hardcoded Secret",
+      "file": "config.js",
+      "line": 28,
+      "message": "Potential API key detected."
+    }
+  ]
+}
+```
+
+---
+
+# Health Check
+
+```http
+GET /api/health
+```
+
+Example Response
+
+```json
+{
+  "status": "ok"
+}
+```
+
+---
+
+# Error Response
+
+```json
+{
+  "success": false,
+  "error": "Repository download failed."
+}
+```
+
+---
+
+# Supported Repository Providers
+
+Currently supported:
+
+- GitHub Public Repositories
+- GitHub Private Repositories (using Personal Access Token)
+
+Coming soon:
+
+- GitLab
+- Bitbucket
+- Azure DevOps
+
+---
+
+# Response Fields
+
+| Field | Description |
+|--------|-------------|
+| severity | Vulnerability severity |
+| rule | Detection rule |
+| file | Affected file |
+| line | Line number |
+| message | Human-readable explanation |
+| snippet | Vulnerable code snippet (when available) |
+
+---
+
+# Rate Limits
+
+To ensure platform stability:
+
+- Repository scans may be rate limited.
+- Large repositories may take longer to analyze.
+- Concurrent scans are processed in the order received.
+
+Enterprise support with higher limits is planned.
+
+# ⚡ GitHub Actions
+
+DevShield integrates seamlessly with GitHub Actions to automatically scan every push and pull request before code reaches production.
+
+---
+
+## Basic Workflow
+
+Create:
+
+```text
+.github/workflows/devshield.yml
+```
+
+```yaml
+name: DevShield Security Scan
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  devshield:
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install
+
+      - name: Run DevShield
+        run: node devshield/bin/devshield.js deploy-check . --sarif
+```
+
+---
+
+# Deployment Protection
+
+Pipeline Guardian automatically blocks deployments whenever configured security thresholds are exceeded.
+
+Example:
+
+```text
+Critical : 2
+High     : 5
+
+❌ Deployment Blocked
+
+Exit Code: 1
+```
+
+If no blocking vulnerabilities exist:
+
+```text
+Critical : 0
+High     : 0
+
+✅ Deployment Approved
+
+Exit Code: 0
+```
+
+---
+
+# Generated Reports
+
+During every workflow DevShield can generate:
+
+- Console Report
+- JSON Report
+- HTML Report
+- SARIF Report
+
+---
+
+# GitHub Code Scanning
+
+For public repositories or repositories with GitHub Advanced Security enabled, SARIF reports can be uploaded directly into GitHub Code Scanning.
+
+Example:
+
+```yaml
+- name: Upload SARIF
+  if: always()
+  uses: github/codeql-action/upload-sarif@v3
+  with:
+    sarif_file: devshield-results.sarif
+```
+
+---
+
+# Recommended CI/CD Flow
+
+```text
+Developer Push
+       │
+       ▼
+GitHub Actions
+       │
+       ▼
+DevShield Scan
+       │
+       ▼
+Pipeline Guardian
+       │
+ ┌─────┴─────┐
+ │           │
+ ▼           ▼
+PASS      BLOCK
+ │           │
+ ▼           ▼
+Deploy     Stop Build
+```
+
+---
+
+# Why Integrate with GitHub Actions?
+
+✔ Automatic security scanning
+
+✔ Blocks insecure deployments
+
+✔ Detects vulnerabilities before production
+
+✔ Produces machine-readable reports
+
+✔ Integrates with existing CI/CD pipelines
+
+✔ No additional infrastructure required
+# 🗺️ Roadmap
+
+DevShield is continuously evolving into a complete developer-first application security platform.
+
+---
+
+# ✅ Completed
+
+### Core Security Engine
+
+- Recursive project scanning
+- Multi-language rule engine
+- Vulnerability detection
+- Severity classification
+- Security baseline support
+- Existing vulnerability tracking
+
+---
+
+### Developer Experience
+
+- CLI Scanner
+- Interactive Dashboard
+- HTML Reports
+- JSON Reports
+- SARIF Reports
+- Rich Console Output
+
+---
+
+### GitHub Integration
+
+- Repository validation
+- Repository download
+- ZIP extraction
+- Automatic cleanup
+- GitHub Actions integration
+
+---
+
+### CI/CD Protection
+
+- Pipeline Guardian
+- Deployment blocking
+- Exit code support
+- Automated security gates
+
+  # 🎯 Vision
+
+Our mission is simple:
+
+> Build the easiest security platform developers actually enjoy using.
+
+Instead of slowing development down, DevShield enables teams to ship software faster—with confidence that security has already been checked before deployment.
+
+# 💻 Supported Languages
+
+DevShield currently supports security analysis for the following languages and technologies.
+
+| Language | Supported |
+|------------|:---------:|
+| JavaScript | ✅ |
+| TypeScript | ✅ |
+| Node.js | ✅ |
+| JSON | ✅ |
+| YAML | ✅ |
+| Dockerfile | 🚧 |
+| Python | 🚧 |
+| Java | 🚧 |
+| Go | 🚧 |
+| PHP | 🚧 |
+| C# | 🚧 |
+| Rust | 🚧 |
+
+> More language support is continuously being added.
+
+---
+
+# 🛡️ Detection Coverage
+
+DevShield currently detects a wide range of security issues.
+
+| Category | Status |
+|-----------|:------:|
+| SQL Injection | ✅ |
+| Command Injection | ✅ |
+| Remote Code Execution | ✅ |
+| Path Traversal | ✅ |
+| Cross-Site Scripting (XSS) | ✅ |
+| Prototype Pollution | ✅ |
+| Server-Side Request Forgery (SSRF) | ✅ |
+| Open Redirect | ✅ |
+| Insecure Deserialization | ✅ |
+| Hardcoded Passwords | ✅ |
+| Hardcoded Secrets | ✅ |
+| AWS Keys | ✅ |
+| GitHub Tokens | ✅ |
+| JWT Secrets | ✅ |
+| API Keys | ✅ |
+| Weak Cryptography | ✅ |
+| Dangerous eval() Usage | ✅ |
+| Child Process Abuse | ✅ |
+| Insecure Randomness | ✅ |
+| Deployment Risk Analysis | ✅ |
+| AI Incident Prioritization | 🚧 |
+| Blast Radius Analysis | 🚧 |
+| Explainable AI | 🚧 |
+| Confidence Scoring | 🚧 |
+
+---
+
+# 📁 Project Structure
+
+```text
+DevShield
+│
+├── api/                     REST API
+├── dashboard/               Web dashboard
+├── devshield/
+│   ├── bin/                 CLI
+│   ├── core/                Scanner engine
+│   ├── github/              GitHub integration
+│   ├── reporters/           Console, HTML, JSON, SARIF
+│   ├── rules/               Detection rules
+│   ├── utils/               Utilities
+│   └── config/              Configuration
+│
+├── docs/                    Documentation
+├── .github/                 GitHub Actions
+├── action.yml               Marketplace Action
 ├── package.json
-└── vercel.json
+└── README.md
+```
 
 ---
 
-## 🏗️ Technical Stack
+# 🤝 Contributing
 
-| Layer | Technology |
-|---|---|
-| Frontend | Single-file HTML/CSS/JS SPA (no build step) |
-| Backend | Node.js serverless functions (Vercel) |
-| Database & Auth | Supabase (Postgres + Supabase Auth) |
-| Payments | Paystack |
-| Email | Gmail SMTP via Nodemailer |
-| Hosting | Vercel |
-| CI | GitHub Action (`action.yml`) wrapping the CLI |
-| Offline support | Service Worker (`sw.js`) + PWA manifest |
+We welcome contributions from the community.
+
+You can contribute by:
+
+- Reporting bugs
+- Suggesting new features
+- Improving documentation
+- Writing detection rules
+- Improving performance
+- Adding language support
+- Enhancing the dashboard
+- Improving the CLI experience
+
+### Getting Started
+
+```bash
+git clone https://github.com/devshieldhq/Devshield.git
+
+cd Devshield
+
+npm install
+```
+
+Create a feature branch:
+
+```bash
+git checkout -b feature/my-feature
+```
+
+Commit your changes:
+
+```bash
+git commit -m "Add amazing feature"
+```
+
+Push:
+
+```bash
+git push origin feature/my-feature
+```
+
+Open a Pull Request.
 
 ---
 
-## 🧠 Built With AI Assistance
+# 💬 Community
 
-**Debugging backend and frontend issues.:**
-**Reviewing code for security improvements and performance.:**
+Join the DevShield community.
+
+- 🌐 Website — https://devshield.site
+- 🐞 GitHub Issues — https://github.com/devshieldhq/Devshield/issues
+- ⭐ GitHub Repository — https://github.com/devshieldhq/Devshield
+
+We're always looking for feedback from developers, security engineers, and open-source contributors.
 
 ---
 
-## 🥊 Challenges
+# ❤️ Support DevShield
 
-- Runtime monitoring across inconsistent browser environments
-- Calibrating AI confidence scores so they're trustworthy enough to act on
-- Deciding what AutoFix is allowed to touch automatically vs. what needs human approval
-- Keeping the static-analysis CLI's language/rule coverage broad without false-positive noise
+If DevShield helps you build more secure software:
 
-## 📈 Performance
+⭐ Star the repository
 
-_Fill in with real measured numbers once you have them — placeholders below are structural only, not verified figures:_
+🍴 Fork the project
 
-| Metric | Target |
-|---|---|
-| Incident Detection | _TBD_ |
-| Diagnosis Latency | _TBD_ |
-| AI Confidence | Dynamic, per-incident |
-| Duplicate Detection | Enabled (Guardian fingerprinting) |
+🗣️ Share it with your team
 
-## 🗺️ Roadmap
+🐛 Report bugs
 
-**Phase 1 — Current**
-Guardian · Inspector · Diagnose · AutoFix · CLI · Dashboard
+💡 Suggest new features
 
-**Phase 2**
-Predictive AI · Repository intelligence · Distinct CLI subcommands (`scan`/`diagnose`/`fix`/`monitor`) · VS Code extension · Deeper CI/CD integration
+Every contribution helps improve developer security for everyone.
 
-**Phase 3**
-Self-healing deployments · Enterprise/fleet monitoring · Distributed AI agents · Trained learning models (beyond current heuristic ranking)
+---
 
-## ⚖️ Comparison
+# 📄 License
 
-| Capability | DevShield | Traditional Monitoring |
-|---|---|---|
-| Error Monitoring | ✅ | ✅ |
-| AI Diagnosis | ✅ | ❌ |
-| Root Cause Analysis | ✅ | Limited |
-| Risk Scoring | ✅ | ❌ |
-| Autonomous Repair | ✅ (whitelisted only) | ❌ |
-| Static Multi-Language Scanning | ✅ (21 languages) | Varies |
+This project is licensed under the **Proprietary License**.
 
-## 🔒 Security
-
-- No secrets checked into the repo (verified — hits in `devshield/rules` and `devshield/tests` are detector rule definitions and a deliberate test fixture, not real keys)
-- Supabase Auth with Row Level Security on all data tables
-- Rate limiting, input sanitization, and abuse detection modules (`security/`)
-- Admin access gated by a hardcoded email allowlist, client-side (worth hardening server-side if this becomes customer-facing at scale)
-- All required secrets loaded via environment variables, never hardcoded
-
-## 🏢 Enterprise Vision
-
-Longer-term direction: microservice-aware monitoring, Kubernetes/cloud-native deployments, and AI-driven operations for organizations running fleets of services rather than a single app.
-
-## 🤝 Contributing
-
-This is currently a solo-maintained project. _Add contribution guidelines here (issue process, PR expectations, code style) if/when you open it up._
-
-## 📄 License
-
-Proprietary — All rights reserved.
+See the **LICENSE** file for more information.
