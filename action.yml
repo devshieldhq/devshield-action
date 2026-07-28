@@ -1,8 +1,6 @@
 name: DevShield Security Scan
 
-description: >
-  Developer-first application security scanner that detects vulnerabilities,
-  generates SARIF reports, and blocks insecure deployments before production.
+description: Developer-first GitHub Action for security scanning, SARIF reporting, and deployment protection.
 
 author: DevShield
 
