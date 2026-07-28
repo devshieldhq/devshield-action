@@ -1,32 +1,54 @@
-name: "DevShield Bug Hunter"
-description: "Scans a repo for structural issues, secret leaks, syntax errors, and risky patterns before every commit."
-author: "DevShield"
+name: DevShield Security Scan
+
+description: >
+  Developer-first application security scanner that detects vulnerabilities,
+  generates SARIF reports, and blocks insecure deployments before production.
+
+author: DevShield
 
 branding:
-  icon: "shield"
-  color: "purple"
+  icon: shield
+  color: blue
 
 inputs:
   required-paths:
-    description: "Comma-separated list of paths that must exist in the repo"
+    description: "Comma-separated list of files or directories that must exist before scanning."
     required: false
     default: "package.json"
+
   node-version:
-    description: "Node.js version to run DevShield with"
+    description: "Node.js version used to run DevShield."
     required: false
     default: "20"
 
+outputs:
+  passed:
+    description: "Whether the security scan passed."
+
+  report:
+    description: "Path to the generated DevShield report."
+
 runs:
-  using: "composite"
+  using: composite
+
   steps:
-    - name: Set up Node.js
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.node-version }}
 
-    - name: Run DevShield Pipeline
+    - name: Install Dependencies
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: npm install
+
+    - name: Run DevShield Security Scan
       shell: bash
       working-directory: ${{ github.workspace }}
       env:
         DEVSHIELD_REQUIRED_PATHS: ${{ inputs.required-paths }}
-      run: node "${{ github.action_path }}/devshield/pipeline.js"
+      run: |
+        node "${{ github.action_path }}/devshield/bin/devshield.js" deploy-check . --sarif --html
