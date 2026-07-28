@@ -11,7 +11,7 @@ Developer-first Application Security Platform that detects vulnerabilities befor
 <p align="center">
 
 ![Node.js](https://img.shields.io/badge/Node.js-20+-green)
-![License](https://img.shields.io/badge/license-Proprietary-lightgrey)
+![License](https://img.shields.io/badge/License-MIT-green)
 ![GitHub Stars](https://img.shields.io/github/stars/devshieldhq/Devshield)
 ![Issues](https://img.shields.io/github/issues/devshieldhq/Devshield)
 ![Security](https://img.shields.io/badge/security-DevSecOps-red)
