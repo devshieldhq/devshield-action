@@ -913,8 +913,6 @@ Every contribution helps improve developer security for everyone.
 
 ---
 
-# 📄 License
+## License
 
-This project is licensed under the **Proprietary License**.
-
-See the **LICENSE** file for more information.
+This project is licensed under the MIT License. See the LICENSE file for details.
