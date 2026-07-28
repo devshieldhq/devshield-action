@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://github.com/devshieldhq/devshield-action/blob/main/logo-navbar.png.png" width="160" alt="DevShield Logo">
+  <img src="https://github.com/devshieldhq/devshield-action/blob/main/logo-navbar.png.png" width="320" alt="DevShield Logo">
 </p>
 
-<h1 align="center">🛡️ DevShield</h1>
+<h1 align="center"> DevShield</h1>
 
 <p align="center">
 Developer-first Application Security Platform that detects vulnerabilities before deployment.
