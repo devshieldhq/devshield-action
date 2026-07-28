@@ -1,18 +1,41 @@
 {
-  "name": "devshield",
+  "name": "devshield-action",
   "version": "1.0.0",
-  "description": "DevShield — Autonomous AI Bug Hunter",
-  "main": "sdk/agent.js",
+  "description": "Developer-first application security scanner for GitHub Actions.",
   "license": "MIT",
+  "main": "sdk/agent.js",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "bin": {
     "devshield": "./devshield/bin/devshield.js"
   },
   "scripts": {
-    "devshield": "node devshield/bin/devshield.js"
+    "devshield": "node devshield/bin/devshield.js",
+    "scan": "node devshield/bin/devshield.js scan .",
+    "deploy-check": "node devshield/bin/devshield.js deploy-check ."
   },
+  "keywords": [
+    "security",
+    "github-actions",
+    "devsecops",
+    "sast",
+    "sarif",
+    "scanner",
+    "owasp",
+    "application-security",
+    "code-scanning",
+    "devshield"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devshieldhq/devshield-action.git"
+  },
+  "homepage": "https://devshield.site",
+  "bugs": {
+    "url": "https://github.com/devshieldhq/devshield-action/issues"
+  },
+  "author": "DevShield",
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
     "adm-zip": "^0.6.0",
