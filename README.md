@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/devshieldhq/Devshield/main/logo-navbar.png.png" width="160" alt="DevShield Logo">
+  <img src="https://github.com/devshieldhq/devshield-action/blob/main/logo-navbar.png.png" width="160" alt="DevShield Logo">
 </p>
 
 <h1 align="center">🛡️ DevShield</h1>
