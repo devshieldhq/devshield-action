@@ -16,8 +16,7 @@ Developer-first GitHub Action for intelligent application security scanning, dep
 [![Node.js](https://img.shields.io/badge/Node.js-20+-green)](https://nodejs.org)
 [![GitHub Stars](https://img.shields.io/github/stars/devshieldhq/devshield-action?style=social)](https://github.com/devshieldhq/devshield-action/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/devshieldhq/devshield-action?style=social)](https://github.com/devshieldhq/devshield-action/network/members)
-[![Build](https://img.shields.io/github/actions/workflow/status/devshieldhq/devshield-action/devshield.yml?branch=main)](https://github.com/devshieldhq/devshield-action/actions)
-
+[![Build](https://github.com/devshieldhq/devshield-action/actions/workflows/devshield.yml/badge.svg)](https://github.com/devshieldhq/devshield-action/actions/workflows/devshield.yml)
 </p>
 
 ---
