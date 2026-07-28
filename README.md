@@ -2,20 +2,21 @@
   <img src="https://github.com/devshieldhq/devshield-action/blob/main/logo-navbar.png.png" width="320" alt="DevShield Logo">
 </p>
 
-<h1 align="center"> DevShield</h1>
+<h1 align="center">🛡️ DevShield Security Scan</h1>
 
 <p align="center">
-Developer-first Application Security Platform that detects vulnerabilities before deployment.
+Developer-first GitHub Action for intelligent application security scanning, deployment protection, and AI-powered vulnerability analysis.
 </p>
 
 <p align="center">
 
-![Node.js](https://img.shields.io/badge/Node.js-20+-green)
-![License](https://img.shields.io/badge/License-MIT-green)
-![GitHub Stars](https://img.shields.io/github/stars/devshieldhq/Devshield)
-![Issues](https://img.shields.io/github/issues/devshieldhq/Devshield)
-![Security](https://img.shields.io/badge/security-DevSecOps-red)
-![Build](https://img.shields.io/github/actions/workflow/status/devshieldhq/Devshield/devshield.yml)
+[![GitHub Marketplace](https://img.shields.io/badge/GitHub%20Marketplace-DevShield%20Security%20Scan-blue?logo=github)](https://github.com/marketplace/actions/devshield-security-scan)
+[![GitHub release](https://img.shields.io/github/v/release/devshieldhq/devshield-action)](https://github.com/devshieldhq/devshield-action/releases/latest)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-20+-green)](https://nodejs.org)
+[![GitHub Stars](https://img.shields.io/github/stars/devshieldhq/devshield-action?style=social)](https://github.com/devshieldhq/devshield-action/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/devshieldhq/devshield-action?style=social)](https://github.com/devshieldhq/devshield-action/network/members)
+[![Build](https://img.shields.io/github/actions/workflow/status/devshieldhq/devshield-action/devshield.yml?branch=main)](https://github.com/devshieldhq/devshield-action/actions)
 
 </p>
 
@@ -23,23 +24,26 @@ Developer-first Application Security Platform that detects vulnerabilities befor
 
 # 🛡️ What is DevShield?
 
-DevShield is a developer-first application security platform built to help developers discover, understand, prioritize, and remediate security vulnerabilities before software reaches production.
+DevShield is a developer-first application security platform built to help developers discover, explain, prioritize, and remediate security vulnerabilities before software reaches production.
 
-Unlike traditional scanners that simply dump vulnerabilities into a report, DevShield provides actionable findings with file locations, affected code snippets, severity analysis, deployment protection, and an interactive dashboard designed for modern development teams.
+Unlike traditional scanners that simply generate vulnerability reports, DevShield provides intelligent analysis with precise file locations, affected code snippets, severity scoring, deployment protection, AI-powered prioritization, blast radius analysis, business impact analysis, and an interactive security dashboard.
 
 DevShield combines:
 
-- CLI security scanning
-- Repository security analysis
-- Deployment protection
-- GitHub integration
-- Interactive security dashboard
-- CI/CD security automation
+- GitHub Actions Security Scanning
+- CLI Security Scanner
+- Deployment Guardian
+- AI Incident Prioritization
+- Blast Radius Analysis
+- Business Impact Analysis
+- Confidence Scoring
+- SARIF, HTML & JSON Reports
+- Interactive Security Dashboard
+- CI/CD Security Automation
 
-into a single developer-focused platform.
+into a single developer-first security platform.
 
 ---
-
 ## Why DevShield?
 
 Modern developers shouldn't have to choose between:
