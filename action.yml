@@ -1,6 +1,6 @@
 name: DevShield Security Scan
 
-description: Developer-first GitHub Action for security scanning, SARIF reporting, and deployment protection.
+description: Developer-first GitHub Action for security scanning, SARIF reporting, deployment protection, and AI-powered analysis.
 
 author: DevShield
 
@@ -17,7 +17,7 @@ inputs:
   node-version:
     description: "Node.js version used to run DevShield."
     required: false
-    default: "20"
+    default: "24"
 
 outputs:
   passed:
