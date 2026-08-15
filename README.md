@@ -12,7 +12,7 @@ Developer-first GitHub Action for intelligent application security scanning, dep
 
 [![GitHub Marketplace](https://img.shields.io/badge/GitHub%20Marketplace-DevShield%20Security%20Scan-blue?logo=github)](https://github.com/marketplace/actions/devshield-security-scan)
 [![GitHub release](https://img.shields.io/github/v/release/devshieldhq/devshield-action)](https://github.com/devshieldhq/devshield-action/releases/latest)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-20+-green)](https://nodejs.org)
 [![GitHub Stars](https://img.shields.io/github/stars/devshieldhq/devshield-action?style=social)](https://github.com/devshieldhq/devshield-action/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/devshieldhq/devshield-action?style=social)](https://github.com/devshieldhq/devshield-action/network/members)
