@@ -19,6 +19,15 @@ inputs:
     required: false
     default: "24"
 
+  devshield-api-key:
+    description: "DevShield project API key."
+    required: true
+
+  devshield-api-url:
+    description: "DevShield API endpoint."
+    required: false
+    default: "https://devshield.site/api/analyze"
+
 outputs:
   passed:
     description: "Whether the security scan passed."
@@ -43,7 +52,7 @@ runs:
       working-directory: ${{ github.action_path }}
       run: npm install
 
-       - name: Run DevShield Security Scan
+    - name: Run DevShield Security Scan
       shell: bash
       working-directory: ${{ github.workspace }}
       env:
