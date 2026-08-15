@@ -8,7 +8,7 @@ const API_URL =
 const API_KEY = process.env.DEVSHIELD_API_KEY;
 
 if (!API_KEY) {
-  console.error("❌ DEVSHIELD_API_KEY is not set.");
+  console.error("DEVSHIELD_API_KEY is not set.");
   process.exit(1);
 }
 
@@ -20,7 +20,7 @@ async function main() {
       : null;
 
   if (!repositoryUrl) {
-    console.error("❌ GitHub repository URL could not be determined.");
+    console.error("GitHub repository URL could not be determined.");
     process.exit(1);
   }
 
@@ -43,13 +43,13 @@ async function main() {
   try {
     data = JSON.parse(text);
   } catch {
-    console.error("❌ DevShield returned invalid JSON:");
+    console.error("DevShield returned invalid JSON:");
     console.error(text);
     process.exit(1);
   }
 
   if (!response.ok || !data.success) {
-    console.error("❌ DevShield scan failed:");
+    console.error("DevShield scan failed:");
     console.error(JSON.stringify(data, null, 2));
     process.exit(1);
   }
@@ -69,23 +69,23 @@ async function main() {
   const summary = data.findings?.summary || {};
 
   console.log("");
-  console.log("🛡️ DevShield Security Scan");
+  console.log("DevShield Security Scan");
   console.log("--------------------------------");
   console.log(`Critical: ${summary.critical || 0}`);
   console.log(`High:     ${summary.high || 0}`);
   console.log(`Medium:   ${summary.medium || 0}`);
   console.log(`Low:      ${summary.low || 0}`);
   console.log("--------------------------------");
-  console.log("✅ DevShield scan completed.");
+  console.log("DevShield scan completed.");
 
   if ((summary.critical || 0) > 0 || (summary.high || 0) > 0) {
-    console.error("❌ Security threshold exceeded.");
+    console.error("Security threshold exceeded.");
     process.exit(1);
   }
 }
 
 main().catch((error) => {
-  console.error("❌ DevShield Action error:");
+  console.error("DevShield Action error:");
   console.error(error);
   process.exit(1);
 });
