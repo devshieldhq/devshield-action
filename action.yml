@@ -43,10 +43,10 @@ runs:
       working-directory: ${{ github.action_path }}
       run: npm install
 
-    - name: Run DevShield Security Scan
+       - name: Run DevShield Security Scan
       shell: bash
       working-directory: ${{ github.workspace }}
       env:
-        DEVSHIELD_REQUIRED_PATHS: ${{ inputs.required-paths }}
-      run: |
-        node "${{ github.action_path }}/devshield/bin/devshield.js" deploy-check . --sarif --html
+        DEVSHIELD_API_KEY: ${{ inputs.devshield-api-key }}
+        DEVSHIELD_API_URL: ${{ inputs.devshield-api-url }}
+      run: node "${{ github.action_path }}/api/github-action-scan.js"
