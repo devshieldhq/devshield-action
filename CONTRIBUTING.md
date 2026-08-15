@@ -1,142 +1,80 @@
-# Contributing to DevShield
+# 🤝 Contributing
 
-First off, thank you for your interest in contributing to DevShield.
+We welcome contributions from the community.
 
-We welcome bug reports, feature requests, documentation improvements, security rules, performance optimizations, and code contributions.
+You can contribute by:
 
----
+- Reporting bugs
+- Suggesting new features
+- Improving documentation
+- Writing detection rules
+- Improving performance
+- Adding language support
+- Enhancing the dashboard
+- Improving the CLI experience
 
-# Getting Started
-
-Clone the repository.
+### Getting Started
 
 ```bash
 git clone https://github.com/devshieldhq/Devshield.git
-```
 
-```bash
 cd Devshield
-```
 
-Install dependencies.
-
-```bash
 npm install
 ```
 
----
-
-# Create a Branch
+Create a feature branch:
 
 ```bash
 git checkout -b feature/my-feature
 ```
 
-Use descriptive branch names.
+Commit your changes:
 
-Examples:
-
-```text
-feature/github-action
-
-feature/sarif-report
-
-fix/path-traversal
-
-docs/readme-update
+```bash
+git commit -m "Add amazing feature"
 ```
 
----
+Push:
 
-# Coding Guidelines
-
-Please follow these principles:
-
-- Write clean code.
-- Keep functions small.
-- Prefer readability.
-- Add comments where necessary.
-- Avoid unnecessary dependencies.
-- Maintain backward compatibility whenever possible.
-
----
-
-# Commit Messages
-
-Examples:
-
-```text
-Add GitHub SARIF upload
-
-Improve HTML report
-
-Fix SQL injection detection
-
-Update README
-
-Refactor scanner engine
+```bash
+git push origin feature/my-feature
 ```
 
----
-
-# Pull Requests
-
-Before opening a Pull Request, ensure:
-
-- Code builds successfully.
-- Tests pass.
-- Documentation is updated.
-- No merge conflicts exist.
-- New functionality is documented.
+Open a Pull Request.
 
 ---
 
-# Reporting Bugs
+# 💬 Community
 
-Please include:
+Join the DevShield community.
 
-- DevShield version
-- Operating system
-- Node.js version
-- Steps to reproduce
-- Expected behavior
-- Actual behavior
-- Logs (if applicable)
+- 🌐 Website — https://devshield.site
+- 🐞 GitHub Issues — https://github.com/devshieldhq/Devshield/issues
+- ⭐ GitHub Repository — https://github.com/devshieldhq/Devshield
+
+We're always looking for feedback from developers, security engineers, and open-source contributors.
 
 ---
 
-# Suggesting Features
+# ❤️ Support DevShield
 
-When proposing a feature, include:
+If DevShield helps you build more secure software:
 
-- Problem statement
-- Proposed solution
-- Example workflow
-- Potential impact
+⭐ Star the repository
 
----
+🍴 Fork the project
 
-# Security Contributions
+🗣️ Share it with your team
 
-New security rules are always welcome.
+🐛 Report bugs
 
-Examples include:
+💡 Suggest new features
 
-- Injection vulnerabilities
-- Secret detection
-- Authentication weaknesses
-- Configuration issues
-- Dependency risks
-- CI/CD security checks
+Every contribution helps improve developer security for everyone.
 
 ---
 
-# Community
+## License
 
-Please be respectful and constructive.
-
-We value collaboration, transparency, and continuous improvement.
-
----
-
-Thank you for helping make DevShield a better security platform.
+This project is licensed under the MIT License. See the LICENSE file for details.
