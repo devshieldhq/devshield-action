@@ -1,47 +1,14 @@
 # 🤝 Contributing
 
-We welcome contributions from the community.
-
-You can contribute by:
+DevShield is proprietary software — we don't accept external code
+contributions or pull requests. You're welcome to contribute by:
 
 - Reporting bugs
 - Suggesting new features
-- Improving documentation
-- Writing detection rules
-- Improving performance
-- Adding language support
-- Enhancing the dashboard
-- Improving the CLI experience
+- Suggesting new detection rules
+- Improving documentation feedback via issues
 
-### Getting Started
-
-```bash
-git clone https://github.com/devshieldhq/Devshield.git
-
-cd Devshield
-
-npm install
-```
-
-Create a feature branch:
-
-```bash
-git checkout -b feature/my-feature
-```
-
-Commit your changes:
-
-```bash
-git commit -m "Add amazing feature"
-```
-
-Push:
-
-```bash
-git push origin feature/my-feature
-```
-
-Open a Pull Request.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to submit these.
 
 ---
 
@@ -53,7 +20,7 @@ Join the DevShield community.
 - 🐞 GitHub Issues — https://github.com/devshieldhq/Devshield/issues
 - ⭐ GitHub Repository — https://github.com/devshieldhq/Devshield
 
-We're always looking for feedback from developers, security engineers, and open-source contributors.
+We're always looking for feedback from developers and security engineers.
 
 ---
 
@@ -63,18 +30,16 @@ If DevShield helps you build more secure software:
 
 ⭐ Star the repository
 
-🍴 Fork the project
-
 🗣️ Share it with your team
 
 🐛 Report bugs
 
 💡 Suggest new features
 
-Every contribution helps improve developer security for everyone.
+Every bit of feedback helps improve developer security for everyone.
 
 ---
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is proprietary software. See the LICENSE file for details. Use of this GitHub Action is permitted via the published `uses:` reference in your own workflows; the source and bundled distribution may not be copied, modified, or redistributed without written permission.
