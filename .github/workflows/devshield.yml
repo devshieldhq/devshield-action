@@ -33,5 +33,7 @@ jobs:
           test -f action.yml
           echo "action.yml exists"
 
-      - name: Run DevShield Action
+           - name: Run DevShield Action
         uses: ./
+        with:
+          devshield-api-key: ${{ secrets.DEVSHIELD_API_KEY }}
